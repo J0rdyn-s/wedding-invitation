@@ -86,9 +86,91 @@
       .kr:hover {
         background-color: #e4b17f;
       }
+
+      /* Modal Style */
+      #lang-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      #modal-box {
+        position: relative;
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        width: 300px;
+        text-align: center;
+        z-index: 10000;
+        font-family: inherit;
+      }
+
+      #modal-text {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #4a4a4a;
+      }
+
+      .modal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      #modal-yes,
+      #modal-no {
+        padding: 0.5rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 2rem;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      #modal-yes {
+        background-color: #dca3c2;
+        color: white;
+      }
+
+      #modal-yes:hover {
+        background-color: #c58bab;
+      }
+
+      #modal-no {
+        background-color: #ccc;
+        color: #333;
+      }
+
+      #modal-no:hover {
+        background-color: #bbb;
+      }
     </style>
   </head>
   <body>
+    <!-- 💍 Custom Language Confirm Modal -->
+    <div id="lang-modal" style="display: none">
+      <div id="modal-overlay"></div>
+      <div id="modal-box">
+        <p id="modal-text">Continue in your language?</p>
+        <div class="modal-buttons">
+          <button id="modal-yes">Yes</button>
+          <button id="modal-no">No</button>
+        </div>
+      </div>
+    </div>
+
     <h1 id="main-title">Welcome to our wedding! 💍</h1>
     <p id="main-subtitle">Please select your preferred language to continue</p>
 
@@ -106,29 +188,43 @@
 
         let langName = "English";
         let redirectUrl = "index_en.html";
-        let confirmMessage = "Continue in English?";
+        let confirmText = "Continue in English?";
 
         if (lang.startsWith("fr")) {
           langName = "Français";
           redirectUrl = "index_fr.html";
+          confirmText = "Continuer en Français ?";
           title.textContent = "Bienvenue à notre mariage ! 💍";
           subtitle.textContent = "Veuillez sélectionner votre langue pour continuer";
-          confirmMessage = "Continuer en Français ?";
         } else if (lang.startsWith("ko")) {
           langName = "한국어";
           redirectUrl = "index_kr.html";
+          confirmText = "한국어로 계속하시겠습니까?";
           title.textContent = "우리의 결혼식에 오신 것을 환영합니다! 💍";
           subtitle.textContent = "계속하려면 사용하실 언어를 선택해 주세요";
-          confirmMessage = "한국어로 계속하시겠습니까?";
         } else {
           title.textContent = "Welcome to our wedding! 💍";
           subtitle.textContent = "Please select your preferred language to continue";
         }
 
-        if (confirm(confirmMessage)) {
-          window.location.href = redirectUrl;
-        }
+        // 💬 Show modal with correct message
+        const modal = document.getElementById("lang-modal");
+        const modalText = document.getElementById("modal-text");
+        const yesBtn = document.getElementById("modal-yes");
+        const noBtn = document.getElementById("modal-no");
 
+        modalText.textContent = confirmText;
+        modal.style.display = "flex";
+
+        yesBtn.onclick = () => {
+          window.location.href = redirectUrl;
+        };
+
+        noBtn.onclick = () => {
+          modal.style.display = "none";
+        };
+
+        // Optional: dynamically adjust title size
         function fitTextToScreen(el, maxSize = 32, minSize = 12) {
           let fontSize = maxSize;
           el.style.fontSize = fontSize + "px";
