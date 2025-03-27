@@ -164,9 +164,10 @@
       <div id="modal-overlay"></div>
       <div id="modal-box">
         <p id="modal-text">Continue in your language?</p>
+        <p id="modal-subtext" style="font-size: 0.85rem; color: #888; margin-top: -1rem">You’ll be redirected to your language version</p>
         <div class="modal-buttons">
-          <button id="modal-yes">Yes</button>
-          <button id="modal-no">No</button>
+          <button id="modal-no">👎 No</button>
+          <button id="modal-yes">👍 Yes</button>
         </div>
       </div>
     </div>
@@ -186,20 +187,35 @@
         const title = document.getElementById("main-title");
         const subtitle = document.getElementById("main-subtitle");
 
+        const modal = document.getElementById("lang-modal");
+        const modalText = document.getElementById("modal-text");
+        const modalSubtext = document.getElementById("modal-subtext");
+        const yesBtn = document.getElementById("modal-yes");
+        const noBtn = document.getElementById("modal-no");
+
         let langName = "English";
         let redirectUrl = "index_en.html";
-        let confirmText = "Continue in English?";
+        let confirmText = "🇬🇧 Continue in English?";
+        let subText = "You’ll be redirected to your language version";
+        let yesLabel = "👍 Yes";
+        let noLabel = "👎 No";
 
         if (lang.startsWith("fr")) {
           langName = "Français";
           redirectUrl = "index_fr.html";
-          confirmText = "Continuer en Français ?";
+          confirmText = "🇫🇷 Continuer en Français ?";
+          subText = "Vous serez redirigé vers la version française du site.";
+          yesLabel = "👍 Oui";
+          noLabel = "👎 Non";
           title.textContent = "Bienvenue à notre mariage ! 💍";
           subtitle.textContent = "Veuillez sélectionner votre langue pour continuer";
         } else if (lang.startsWith("ko")) {
           langName = "한국어";
           redirectUrl = "index_kr.html";
-          confirmText = "한국어로 계속하시겠습니까?";
+          confirmText = "🇰🇷 한국어로 계속하시겠습니까?";
+          subText = "한국어 페이지로 이동합니다.";
+          yesLabel = "👍 네";
+          noLabel = "👎 아니오";
           title.textContent = "우리의 결혼식에 오신 것을 환영합니다! 💍";
           subtitle.textContent = "계속하려면 사용하실 언어를 선택해 주세요";
         } else {
@@ -207,13 +223,11 @@
           subtitle.textContent = "Please select your preferred language to continue";
         }
 
-        // 💬 Show modal with correct message
-        const modal = document.getElementById("lang-modal");
-        const modalText = document.getElementById("modal-text");
-        const yesBtn = document.getElementById("modal-yes");
-        const noBtn = document.getElementById("modal-no");
-
         modalText.textContent = confirmText;
+        modalSubtext.textContent = subText;
+        yesBtn.textContent = yesLabel;
+        noBtn.textContent = noLabel;
+
         modal.style.display = "flex";
 
         yesBtn.onclick = () => {
@@ -224,7 +238,6 @@
           modal.style.display = "none";
         };
 
-        // Optional: dynamically adjust title size
         function fitTextToScreen(el, maxSize = 32, minSize = 12) {
           let fontSize = maxSize;
           el.style.fontSize = fontSize + "px";
