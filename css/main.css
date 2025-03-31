@@ -21,20 +21,18 @@
 
 ============================================================================= */
 
-
 /* ============================================================================= 
 1. Fonts
 ============================================================================= */
 /* 7 stroke icons font by Pixeden */
-@import url('pe-icon-7-stroke.css'); /* Full icons list: http://themes-pixeden.com/font-demos/7-stroke/index.html */
+@import url("pe-icon-7-stroke.css"); /* Full icons list: http://themes-pixeden.com/font-demos/7-stroke/index.html */
 
 /* Font awesome icons font */
-@import url('font-awesome.css'); /* Full icons list: http://fontawesome.io/icons/ */
+@import url("font-awesome.css"); /* Full icons list: http://fontawesome.io/icons/ */
 
 /* Google fonts */
-@import url('https://fonts.googleapis.com/css?family=Courgette');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic');
-
+@import url("https://fonts.googleapis.com/css?family=Courgette");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic");
 
 /* ============================================================================= 
 2. General styles
@@ -44,7 +42,7 @@ html {
   height: 100%;
 }
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   color: #666;
   margin: 0;
   height: 100%;
@@ -53,7 +51,7 @@ body {
 }
 
 a {
-  color: #0099CC;
+  color: #0099cc;
   text-decoration: none;
   outline: none;
   -webkit-transition-duration: 0.3s;
@@ -62,18 +60,24 @@ a {
 
 a:hover {
   color: #006699;
-  color: #0099CC;
+  color: #0099cc;
   text-decoration: none;
   outline: none;
 }
 
-a:visited, a:visited:hover {
+a:visited,
+a:visited:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #353535;
-  font-family: 'Courgette', Helvetica, sans-serif;
+  font-family: "Courgette", Helvetica, sans-serif;
   line-height: 1.5em;
   margin-top: 0;
   margin-bottom: 10px;
@@ -137,11 +141,14 @@ img {
 }
 
 /* Buttons */
-input[type=submit], input[type=button], button, a.button {
+input[type="submit"],
+input[type="button"],
+button,
+a.button {
   display: inline-block;
   position: relative;
   padding: 0.8em 2em;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.2;
@@ -153,7 +160,7 @@ input[type=submit], input[type=button], button, a.button {
   text-decoration: none;
   background: none;
   border-radius: 0;
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
@@ -166,13 +173,20 @@ a.button.small-button {
   border-radius: 0;
 }
 
-input[type=submit]:hover, button:hover, a.button:hover {
+input[type="submit"]:hover,
+button:hover,
+a.button:hover {
   color: #fff;
   background-color: #ff8578;
   text-decoration: none;
 }
 
-input[type=submit]:visited, input[type=submit]:focus, button:visited, button:focus, a.button:visited, a.button:focus  {
+input[type="submit"]:visited,
+input[type="submit"]:focus,
+button:visited,
+button:focus,
+a.button:visited,
+a.button:focus {
   text-decoration: none;
 }
 /* /Buttons */
@@ -207,7 +221,7 @@ input[type=submit]:visited, input[type=submit]:focus, button:visited, button:foc
   -moz-box-shadow: none;
   box-shadow: none;
   outline: none;
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
 }
 
 .form-control:focus {
@@ -222,7 +236,8 @@ input[type=submit]:visited, input[type=submit]:focus, button:visited, button:foc
   border-color: #ff9191;
 }
 
-textarea.form-control, textarea.form-control:focus {
+textarea.form-control,
+textarea.form-control:focus {
   height: auto;
 }
 
@@ -289,12 +304,12 @@ textarea.form-control, textarea.form-control:focus {
   margin-bottom: 30px;
 }
 
-
-
 /* ============================================================================= 
 3. Page loadig animation
 ============================================================================= */
-.no-js .preloader { display: none;  }
+.no-js .preloader {
+  display: none;
+}
 .preloader {
   position: fixed;
   left: 0px;
@@ -314,11 +329,12 @@ textarea.form-control, textarea.form-control:focus {
   height: 50px;
   position: absolute;
   text-align: center;
-  -webkit-animation: rotate 2.0s infinite linear;
-  animation: rotate 2.0s infinite linear;
+  -webkit-animation: rotate 2s infinite linear;
+  animation: rotate 2s infinite linear;
 }
 
-.dot1, .dot2 {
+.dot1,
+.dot2 {
   width: 60%;
   height: 60%;
   display: inline-block;
@@ -326,19 +342,19 @@ textarea.form-control, textarea.form-control:focus {
   top: 0;
   background: url(../images/heart_img.png) no-repeat;
   background-size: 100%;
-  -webkit-animation: bounce 2.0s infinite ease-in-out;
-  animation: bounce 2.0s infinite ease-in-out;
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
 }
 
 .dot2 {
   top: auto;
   bottom: 0;
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
 
 @-webkit-keyframes rotate {
-  100% { 
+  100% {
     -webkit-transform: rotate(360deg);
   }
 }
@@ -346,32 +362,31 @@ textarea.form-control, textarea.form-control:focus {
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg)
+    -webkit-transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes bounce {
   0%,
   100% {
-    -webkit-transform: scale(0.0);
+    -webkit-transform: scale(0);
   }
   50% {
-    -webkit-transform: scale(1.0);
+    -webkit-transform: scale(1);
   }
 }
 
 @keyframes bounce {
   0%,
-  100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
-
-
 
 /* ============================================================================= 
 4. Site content
@@ -398,7 +413,7 @@ textarea.form-control, textarea.form-control:focus {
   padding: 0;
   color: #353535;
   font-size: 27px;
-  font-family: 'Courgette', Helvetica, sans-serif;
+  font-family: "Courgette", Helvetica, sans-serif;
   line-height: 1em;
 }
 
@@ -429,7 +444,7 @@ textarea.form-control, textarea.form-control:focus {
   color: #fff;
   padding-left: 25px;
   padding-right: 25px;
-  border-right: 1px solid rgba(255,255,255,0.11);
+  border-right: 1px solid rgba(255, 255, 255, 0.11);
 }
 
 .main-nav ul.nav li:last-child a {
@@ -455,7 +470,7 @@ textarea.form-control, textarea.form-control:focus {
 .main-nav ul.nav a.active-item {
   color: #ff8578;
   background-color: #fff;
-  background-color: rgba(255,255,255, 0.98);
+  background-color: rgba(255, 255, 255, 0.98);
   border-right: 1px solid #ff8578;
 }
 
@@ -480,6 +495,11 @@ textarea.form-control, textarea.form-control:focus {
   margin: 0;
 }
 
+.no-margin-title {
+  text-align: center;
+  margin: 0 !important;
+}
+
 .sections {
   padding-top: 120px;
 }
@@ -493,8 +513,6 @@ p.intro {
   margin: 35px 0;
   text-align: center;
 }
-
-
 
 /* =======================================
 4.1. Home Section
@@ -529,7 +547,7 @@ p.intro {
 .hs-mask,
 .footer-mask {
   position: absolute;
-  background: rgba(53,53,53,0.3);
+  background: rgba(53, 53, 53, 0.3);
   top: 0;
   bottom: 0;
   left: 0;
@@ -615,6 +633,13 @@ p.intro {
   border-radius: 60px;
 }
 
+.birthdate {
+  font-size: 5px;
+  color: #999;
+  font-style: italic;
+  margin-top: 4px;
+}
+
 .about-us-block .bottom-block {
   padding: 30px 20px;
   text-align: center;
@@ -622,6 +647,32 @@ p.intro {
 
 .about-us-block .bottom-block p {
   margin: 0;
+}
+
+.bottom-block {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: #555; /* Softer base text */
+}
+
+.bottom-block .role {
+  font-size: 18px;
+  font-weight: 500;
+  color: #444; /* Slightly darker for emphasis */
+  margin-bottom: 6px;
+}
+
+.bottom-block .relation {
+  font-style: italic;
+  color: #777; /* Soft and understated */
+  margin-bottom: 4px;
+}
+
+.bottom-block .parents {
+  font-weight: 500;
+  color: #444; /* Harmonizes with the role */
 }
 
 .about-us .heart {
@@ -675,16 +726,16 @@ p.intro {
 }
 
 ul.social-links {
-    display: inline-block;
-    list-style: none;
-    margin: 8px auto 0;
-    padding: 0;
+  display: inline-block;
+  list-style: none;
+  margin: 8px auto 0;
+  padding: 0;
 }
 
 ul.social-links li {
-    float: left;
-    margin: 0;
-    padding: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 ul.social-links li a {
@@ -713,8 +764,6 @@ ul.social-links li a:hover i {
   transform: rotateY(360deg);
 }
 
-
-
 /* =======================================
 4.2. Our Day Section
 ======================================= */
@@ -723,7 +772,7 @@ ul.social-links li a:hover i {
   display: inline-block;
   background-color: #ff8578;
   color: #fff;
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 40px;
   line-height: 1.1em;
   margin-right: 1.333333%;
@@ -743,8 +792,6 @@ ul.social-links li a:hover i {
   margin-top: 5px;
   text-transform: uppercase;
 }
-
-
 
 /* =======================================
 4.3. Our Story Section
@@ -810,7 +857,7 @@ ul.social-links li a:hover i {
 }
 
 .story-date .year {
-  font-family: 'Courgette', Helvetica, sans-serif;
+  font-family: "Courgette", Helvetica, sans-serif;
   font-size: 21px;
   margin-top: 27px;
 }
@@ -834,8 +881,6 @@ ul.social-links li a:hover i {
   padding: 0;
   z-index: 0;
 }
-
-
 
 /* =======================================
 4.4. Wedding Events Section
@@ -865,7 +910,7 @@ ul.social-links li a:hover i {
 
 .scale-image-effect img {
   z-index: 1;
-  border:0px solid transparent;
+  border: 0px solid transparent;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -914,8 +959,6 @@ ul.social-links li a:hover i {
   margin-right: 5px;
 }
 
-
-
 /* =======================================
 4.5. Gallery Section
 ======================================= */
@@ -932,9 +975,9 @@ ul.social-links li a:hover i {
 .gallery-item a .mask {
   position: absolute;
   background: #4f565e;
-  background: rgba(53,53,53,0.6);
+  background: rgba(53, 53, 53, 0.6);
   display: inline-block;
-  font-family: 'Pe-icon-7-stroke';
+  font-family: "Pe-icon-7-stroke";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -957,24 +1000,22 @@ ul.social-links li a:hover i {
 }
 
 .gallery-item a:hover .mask {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .gallery-item a .mask:after {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -33px 0 0 -33px;
-    width: 66px;
-    line-height: 66px;
-    font-size: 66px;
-    text-align: center;
-    content: "\e6bf";
-    color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -33px 0 0 -33px;
+  width: 66px;
+  line-height: 66px;
+  font-size: 66px;
+  text-align: center;
+  content: "\e6bf";
+  color: #fff;
 }
-
-
 
 /* =======================================
 4.6. RSVP Section
@@ -992,9 +1033,6 @@ ul.social-links li a:hover i {
 .rsvp-form .button {
   margin: 15px 0;
 }
-
-
-
 
 /* =======================================
 4.7. Footer Section (Thank You Section)
@@ -1016,8 +1054,6 @@ ul.social-links li a:hover i {
   font-size: 55px;
   margin: 0;
 }
-
-
 
 /* ============================================================================= 
 5. Media Queries 
@@ -1088,9 +1124,9 @@ ul.social-links li a:hover i {
     z-index: 99;
     text-align: center;
     overflow: auto;
-    -webkit-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.1);
-    box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.1);
     -webkit-transition: all 0.66s ease-in-out;
     -moz-transition: all 0.66s ease-in-out;
     -o-transition: all 0.66s ease-in-out;
@@ -1142,7 +1178,8 @@ ul.social-links li a:hover i {
     display: block;
   }
 
-  .story-row h3, .story-row p {
+  .story-row h3,
+  .story-row p {
     text-align: center;
   }
 
