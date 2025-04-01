@@ -972,7 +972,7 @@ ul.social-links li a:hover i {
   outline: none;
 }
 
-.gallery-item a .mask {
+/* .gallery-item a .mask {
   position: absolute;
   background: #4f565e;
   background: rgba(53, 53, 53, 0.6);
@@ -1015,6 +1015,47 @@ ul.social-links li a:hover i {
   text-align: center;
   content: "\e6bf";
   color: #fff;
+} */
+
+/* Dasktop Hover */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.overlay-text {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1;
 }
 
 /* =======================================
