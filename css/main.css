@@ -33,6 +33,18 @@
 /* Google fonts */
 @import url("https://fonts.googleapis.com/css?family=Courgette");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic");
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "omyu_pretty";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* ============================================================================= 
 2. General styles
@@ -41,6 +53,24 @@
 html {
   height: 100%;
 }
+
+html[lang="ko"] body {
+  font-family: "GangwonEdu_OTFBoldA", sans-serif;
+}
+
+html[lang="ko"] h1,
+html[lang="ko"] h2,
+html[lang="ko"] h3,
+html[lang="ko"] h4,
+html[lang="ko"] h5,
+html[lang="ko"] h6 {
+  color: #353535;
+  font-family: "GangwonEdu_OTFBoldA", sans-serif;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 body {
   font-family: "Roboto", Helvetica, sans-serif;
   color: #666;
@@ -165,6 +195,30 @@ a.button {
   transition-duration: 0.3s;
 }
 
+html[lang="ko"] input[type="submit"],
+html[lang="ko"] input[type="button"],
+html[lang="ko"] button,
+html[lang="ko"] a.button {
+  display: inline-block;
+  position: relative;
+  padding: 0.8em 2em;
+  margin-bottom: 0.25em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.2;
+  border: 0;
+  outline: 0;
+  border: 2px solid #ff8578;
+  color: #353535;
+  text-shadow: none;
+  text-decoration: none;
+  background: none;
+  border-radius: 0;
+  font-family: "GangwonEdu_OTFBoldA", sans-serif;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
 a.button.small-button {
   font-size: 0.875em;
 }
@@ -222,6 +276,29 @@ a.button:focus {
   box-shadow: none;
   outline: none;
   font-family: "Roboto", Helvetica, sans-serif;
+}
+
+html[lang="ko"] .form-control,
+html[lang="ko"] .form-control:focus,
+html[lang="ko"] .has-error .form-control,
+html[lang="ko"] .has-error .form-control:focus {
+  position: relative;
+  border: 1px solid #d5d5d5;
+  border-radius: 0;
+  display: block;
+  font-size: 0.875em;
+  font-weight: 300;
+  margin: 0;
+  padding: 10px 25px 10px 12px;
+  width: 100%;
+  background: 0 0;
+  text-align: left;
+  color: inherit;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  font-family: "GangwonEdu_OTFBoldA", sans-serif;
 }
 
 .form-control:focus {
@@ -417,6 +494,15 @@ textarea.form-control:focus {
   line-height: 1em;
 }
 
+html[lang="ko"] .header .logo-container .header-logo {
+  margin: 0;
+  padding: 0;
+  color: #353535;
+  font-size: 27px;
+  font-family: "GangwonEdu_OTFBoldA", sans-serif;
+  line-height: 1em;
+}
+
 .header-date {
   float: right;
 }
@@ -428,6 +514,16 @@ textarea.form-control:focus {
   line-height: 1em;
   color: #9c9c9c;
   font-family: Roboto;
+  font-weight: 300;
+}
+
+[lang="ko"] .header-date p {
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1em;
+  color: #9c9c9c;
+  font-family: "GangwonEdu_OTFBoldA", sans-serif;
   font-weight: 300;
 }
 
@@ -481,6 +577,10 @@ textarea.form-control:focus {
 
 .section-bg-color {
   background-color: #fcfcfc;
+}
+
+.section-bg-color-home {
+  background-color: #ffe9e5;
 }
 
 .section-title {
